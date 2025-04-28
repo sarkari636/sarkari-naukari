@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Results - Sarkari Naukari</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="logo"><a href="index.html" style="color:white; text-decoration:none;">Sarkari Naukari</a></div>
+  <div class="search-container">
+    <input type="text" id="searchInputResults" placeholder="Search Results...">
+  </div>
+</header>
+
+<section class="jobs-section" id="resultsSection">
+  <!-- Result cards yahan dynamically aayenge -->
+</section>
+
+<script>
+  const results = [
+    "UPSC 2025 Final Result Declared",
+    "SSC CGL 2025 Final Result Available",
+    "Railway Group D 2025 Result Out",
+    "UP Board 12th Result 2025 Declared"
+  ];
+
+  const resultsSection = document.getElementById('resultsSection');
+
+  results.forEach(res => {
+    const div = document.createElement('div');
+    div.className = 'job-card';
+    div.textContent = res;
+    div.style.backgroundColor = '#673AB7';
+    resultsSection.appendChild(div);
+  });
+
+  // Search functionality for results
+  document.getElementById('searchInputResults').addEventListener('input', function(e) {
+    const value = e.target.value.toLowerCase();
+    document.querySelectorAll('.job-card').forEach(card => {
+      card.style.display = card.textContent.toLowerCase().includes(value) ? 'block' : 'none';
+    });
+  });
+</script>
+
+</body>
+</html>
