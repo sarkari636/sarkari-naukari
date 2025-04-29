@@ -112,11 +112,22 @@
       return;
     }
 
-    // Dummy logic (tum database ya API se connect karoge to yeh dynamic hoga)
-    if(rollNumber === '123456') {
-      resultDiv.innerHTML = 'आप पास हो गए! 🎉';
-      resultDiv.style.color = 'green';
-    } else {
+<script>
+  // Dummy database (roll number - result data)
+  const resultsDatabase = {
+    "123456": {
+      name: "अमित कुमार",
+      marks: "450/500",
+      status: "Pass"
+    },
+    "234567": {
+      name: "रीना शर्मा",
+      marks: "380/500",
+      status: "पास"
+    },
+    
+    
+      {
       resultDiv.innerHTML = 'रिजल्ट नहीं मिला। कृपया सही रोल नंबर डालें।';
       resultDiv.style.color = 'red';
     }
